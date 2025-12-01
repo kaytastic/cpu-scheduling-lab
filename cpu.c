@@ -1,4 +1,4 @@
-// Priority Preemptive (PP)
+// Priority-based Preemptive Scheduling (PP)
 
 struct PCB handle_process_arrival_pp(struct PCB *ready_queue, int *queue_cnt,
                                      struct PCB current_process,
@@ -51,7 +51,8 @@ struct PCB handle_process_completion_pp(struct PCB *ready_queue, int *queue_cnt,
     return chosen;
 }
 
-// SRTP
+// Shortest-Remaining-Time-Next Preemptive Scheduling (SRTP)
+
 struct PCB handle_process_arrival_srtp(struct PCB *ready_queue, int *queue_cnt,
                                        struct PCB current_process,
                                        struct PCB new_process, int time_stamp)
