@@ -1,3 +1,5 @@
+#include "oslabs.h"
+
 // Priority-based Preemptive Scheduling (PP)
 
 struct PCB handle_process_arrival_pp(struct PCB *ready_queue, int *queue_cnt,
@@ -112,13 +114,13 @@ struct PCB handle_process_completion_srtp(struct PCB *ready_queue, int *queue_cn
 // Round Robin (RR)
 
 struct PCB handle_process_arrival_rr(struct PCB *ready_queue, int *queue_cnt,
-                                     struct PCB current_process,
-                                     struct PCB new_process,
-                                     int time_stamp, int time_quantum)
+                                        struct PCB current_process,
+                                        struct PCB new_process,
+                                        int time_stamp, int time_quantum)
 {
     if (current_process.PID == 0) {
-        new_process.EST = time_stamp;
-        new_process.EET = time_stamp + new_process.TBT;
+      new_process.EST = time_stamp;
+      new_process.EET = time_stamp + new_process.TBT; 
         return new_process;
     }
 
