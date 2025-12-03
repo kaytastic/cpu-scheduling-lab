@@ -14,7 +14,6 @@ struct PCB handle_process_arrival_pp(struct PCB *ready_queue, int *queue_cnt,
 
     if (new_process.process_priority < current_process.process_priority) {
         current_process.remaining_bursttime -= time_stamp - current_process.execution_starttime;
-        current_process.execution_starttime = 0;
         current_process.execution_endtime = 0;
         ready_queue[*queue_cnt] = current_process;
         (*queue_cnt)++;
